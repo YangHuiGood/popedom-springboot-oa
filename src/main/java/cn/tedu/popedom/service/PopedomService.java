@@ -49,7 +49,6 @@ public class PopedomService {
 		rolePopedom.setRoleName(roleName);
 		rolePopedom.setPopedomId(popedom.getPopedomId());
 		rolePopedom.setPopedomName(popedom.getPopedomName());
-		rolePopedom.setPopedomDomain(popedom.getPopedomDomain());
 		rolePopedom.setPopedomUrl(popedom.getPopedomUrl());
 		rolePopedom.setPopedomFatherId(popedom.getPopedomFatherId());
 		return popedomMapper.addRolePopedom(rolePopedom);

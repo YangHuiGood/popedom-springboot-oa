@@ -3,13 +3,14 @@ package cn.tedu.popedom.pojo;
 import java.io.Serializable;
 
 public class RolePopedom implements Serializable{
+	
 	private String id;
 	private String popedomId;
 	private String popedomFatherId;
 	private String roleName;
 	private String popedomName;
-	private String popedomDomain;
 	private String popedomUrl;
+	
 	public String getId() {
 		return id;
 	}
@@ -40,20 +41,11 @@ public class RolePopedom implements Serializable{
 	public void setPopedomName(String popedomName) {
 		this.popedomName = popedomName;
 	}
-	public String getPopedomDomain() {
-		return popedomDomain;
-	}
-	public void setPopedomDomain(String popedomDomain) {
-		this.popedomDomain = popedomDomain;
-	}
 	public String getPopedomUrl() {
 		return popedomUrl;
 	}
 	public void setPopedomUrl(String popedomUrl) {
 		this.popedomUrl = popedomUrl;
 	}
-	
-	
-	
 	
 }
