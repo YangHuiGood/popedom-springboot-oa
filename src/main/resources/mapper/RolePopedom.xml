@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="cn.tedu.popedom.mapper.PopedomMapper">
 	<!-- 查询所有角色对应的所有权限 -->
 	<select id="selectAll" resultType="RolePopedom">
-		select * from role_popedom
+		select * from role_popedom order by role_name desc
 	</select>
 	<!-- 查询所有的权限 -->
 	<select id="selectPopedomList" resultType="Popedom">
@@ -17,10 +17,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	<!-- 给角色添加权限 -->
 	<insert id="addRolePopedom"  parameterType="RolePopedom">
-		insert into role_popedom (role_name,popedom_id,id,popedom_name,
-		popedom_domain,popedom_url,popedom_fatherid)
-		 values (#{roleName},#{popedomId},#{id},#{popedomName},
-		#{popedomDomain},#{popedomUrl},#{popedomFatherId})
+		insert into role_popedom (role_name,popedom_id,id,popedom_name,popedom_url,popedom_fatherid)
+		 values (#{roleName},#{popedomId},#{id},#{popedomName},#{popedomUrl},#{popedomFatherid})
 	</insert>
 	<!-- 删除角色的权限 -->
 	<delete id="deleteRolePopedom" parameterType="RolePopedom">
@@ -36,7 +34,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	<!-- 通过给定的popedomId查询RolePopedom对象 -->
 	<select id="getRolePopedom" parameterType="RolePopedom" resultType="RolePopedom">
-		select * from role_popedom where role_name=#{roleName} and popedom_id=#{popedomId}
+		select * from role_popedom where role_name=#{roleName} and popedom_fatherid=#{popedomId}
 	</select>
 	
 </mapper>

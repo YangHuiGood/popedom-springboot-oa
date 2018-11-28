@@ -46,9 +46,7 @@ public class PopedomController {
 		
 	//角色添加权限
 	@RequestMapping("popedom/addRolePope/{roleName}/{popedomName}")
-	public String addPopedom(@PathVariable("roleName") String roleName,
-			@PathVariable("popedomName") String popedomName){
-		
+	public String addPopedom(@PathVariable String roleName,@PathVariable String popedomName){		
 		int  result = popedomService.addRolePopedom(roleName,popedomName);	
 		if(result==1){
 			return "success";
@@ -60,14 +58,11 @@ public class PopedomController {
 	
 	//角色权限删除	
 	@RequestMapping("popedom/deleteRolePope/{roleName}/{popedomName}")
-	public String deletePopedom(@PathVariable("roleName") String roleName,
-			@PathVariable("popedomName") String popedomName){
-		//String roleName ="员工";
-		//String popedomName = "二级";
+	public String deletePopedom(@PathVariable String roleName,
+			@PathVariable String popedomName){
 		int result = popedomService.deleteRolePopedom(roleName,popedomName);
 		if(result==1){
-			System.out.println("ok");
-			return result+"";
+			return "success";
 		}else{
 			return "";
 		}

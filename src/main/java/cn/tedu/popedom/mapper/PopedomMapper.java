@@ -8,21 +8,21 @@ import cn.tedu.popedom.pojo.Popedom;
 import cn.tedu.popedom.pojo.RolePopedom;
 
 public interface PopedomMapper {
-
+	
+	String getRoleName(Integer roleId);
+	
+	List<RolePopedom> getRolePope(String roleName);
+	
+	List<RolePopedom> getRolePopedom(@Param("roleName")String roleName,@Param("popedomId")String popedomId);
+	
 	List<RolePopedom> selectAll();
 
 	List<Popedom> selectPopedomList();
+	
+	Popedom selectPopedom(String popedomName);
 
 	int addRolePopedom(RolePopedom rolePopedom);
 
-	List<RolePopedom> getRolePope(String roleName);
-
-	Popedom selectPopedom(String popedomName);
-
-	String getRoleName(Integer roleId);
-
 	int deleteRolePopedom(@Param("roleName")String roleName,@Param("popedomName")String popedomName);
-
-	List<RolePopedom> getRolePopedom(@Param("roleName")String roleName,@Param("popedomId")String popedomId);
 
 }

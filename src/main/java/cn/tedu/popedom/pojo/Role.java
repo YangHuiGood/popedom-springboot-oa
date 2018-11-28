@@ -6,6 +6,7 @@ public class Role implements Serializable{
 	
 	private Integer roleId;
 	private String roleName;
+	private Integer fatherRole;
 	
 	public Integer getRoleId() {
 		return roleId;
@@ -18,6 +19,12 @@ public class Role implements Serializable{
 	}
 	public void setRoleName(String roleName) {
 		this.roleName = roleName;
+	}
+	public Integer getFatherRole() {
+		return fatherRole;
+	}
+	public void setFatherRole(Integer fatherRole) {
+		this.fatherRole = fatherRole;
 	}
 	
 }

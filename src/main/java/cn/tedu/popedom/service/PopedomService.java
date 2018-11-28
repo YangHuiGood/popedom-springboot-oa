@@ -37,10 +37,6 @@ public class PopedomService {
 	  return popedomMapper.selectPopedomList();		
 	}
 		
-	public Popedom selectPopedom(String popedomName) {
-		return popedomMapper.selectPopedom(popedomName);
-	}
-	
 	//角色权限添加
 	public int addRolePopedom(String roleName, String popedomName) {
 		Popedom popedom = popedomMapper.selectPopedom(popedomName);
