@@ -16,7 +16,7 @@ public class UserService {
 	private UserMapper userMapper;
 	public int  registUser(User user){
 		//userName，password（加密），roleId，fatherId
-		user.setUserId(UUIDUtil.getUUID());
+		user.setUserId(MD5Util.md5(UUIDUtil.getUUID()));
 		user.setUserPassword(MD5Util.md5(user.getUserPassword()));
 		int result = userMapper.registUser(user);
 		return result;
